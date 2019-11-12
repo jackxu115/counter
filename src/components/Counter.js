@@ -8,6 +8,8 @@ const Counter = ({ value, increment, decrement, reset }) => (
     <button onClick={increment}>+</button>
     <button onClick={decrement}>-</button>
     <button onClick={reset}>Reset</button>
+    <input type="number"></input>
+    <button>+</button>
   </div>
 );
 
