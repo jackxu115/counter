@@ -1,4 +1,4 @@
-const initialState = { count: 0 };
+const initialState = { count: 0, input: 0 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -8,8 +8,6 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, { count: state.count - 1 });
     case "RESET":
       return Object.assign({}, state, { count: 0 });
-    case "INCREMENT_AMOUNT":
-      return Object.assign({}, state, { count: state.count + action.count });
     default:
       return state;
   }
