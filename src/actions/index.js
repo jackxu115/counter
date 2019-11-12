@@ -5,3 +5,7 @@ export const increment = () => {
 export const decrement = () => {
   return { type: "DECREMENT" };
 };
+
+export const reset = () => {
+  return { type: "RESET" };
+};
