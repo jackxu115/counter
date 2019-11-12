@@ -1,13 +1,13 @@
 import React from "react";
-import { increment, decrement } from "../actions";
+import { increment, decrement, reset } from "../actions";
 import { connect } from "react-redux";
 
-const Counter = ({ value, increment, decrement }) => (
+const Counter = ({ value, increment, decrement, reset }) => (
   <div>
     <h1>Count: {value}</h1>
     <button onClick={increment}>+</button>
     <button onClick={decrement}>-</button>
-    <button>Reset</button>
+    <button onClick={reset}>Reset</button>
   </div>
 );
 
@@ -24,6 +24,9 @@ const mapDispatchToProps = dispatch => {
     },
     decrement: () => {
       dispatch(decrement());
+    },
+    reset: () => {
+      dispatch(reset());
     }
   };
 };
