@@ -8,6 +8,8 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, { count: state.count - 1 });
     case "RESET":
       return Object.assign({}, state, { count: 0 });
+    case "INCREMNT_AMOUNT":
+      return Object.assign({}, state, { count: state.count + state.input });
     default:
       return state;
   }

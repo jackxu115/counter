@@ -1,19 +1,26 @@
-import React from "react";
+import React, { Component } from "react";
 import { increment, decrement, reset } from "../actions";
 import { connect } from "react-redux";
 
-const Counter = ({ value, increment, decrement, reset }) => (
-  <div>
-    <h1>Count: {value}</h1>
-    <button onClick={increment}>+</button>
-    <button onClick={decrement}>-</button>
-    <button onClick={reset}>Reset</button>
-  </div>
-);
+class Counter extends Component {
+  render() {
+    const { value, increment, decrement, reset } = this.props;
+    return (
+      <div>
+        <h1>Count: {value}</h1>
+        <button onClick={increment}>+</button>
+        <button onClick={decrement}>-</button>
+        <button onClick={reset}>Reset</button>
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
-    value: state.count
+    value: state.count,
+    amount: state.input
   };
 };
 
